@@ -1,28 +1,13 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Fri Jul 28 08:53:23 2017
+from pandas import DataFrame, read_csv
 
-@author: Admin
-"""
-
-import numpy as np
-from sklearn.cluster import KMeans
-from sklearn.metrics.pairwise import pairwise_distances_argmin, euclidean_distances
-from sklearn.datasets.samples_generator import make_blobs
-np.random.seed(0)
-batch_size = 45
-centers = [[1, 1], [-1, -1], [1, -1]]
-X, labels_true = make_blobs(n_samples=3000, centers=centers, cluster_std=0.7)
-print('the size of X: ', X.shape)
-k_means = KMeans(init='k-means++', n_clusters=3, n_init=10)
-k_means.fit(X)
+# General syntax to import a library but no functions: 
+##import (library) as (give the library a nickname/alias)
+import matplotlib.pyplot as plt
+import pandas as pd #this is how I usually import pandas
+import sys #only needed to determine Python version number
+import matplotlib #only needed to determine Matplotlib version number
 
 
-k_means_cluster_centers = k_means.cluster_centers_
-print ('the certers: ', k_means_cluster_centers)
-k_means_labels = pairwise_distances_argmin(X, k_means_cluster_centers)
-print ('the first 10 elements of k_means_labels: ', k_means_labels[:10])
-print ('the size of k_means_labels: ', k_means_labels.shape)
-
-
-
+print('Python version ' + sys.version)
+print('Pandas version ' + pd.__version__)
+print('Matplotlib version ' + matplotlib.__version__)
