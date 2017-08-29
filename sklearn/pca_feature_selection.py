@@ -28,7 +28,8 @@ selection = SelectKBest(k=1)
 #从主成分分析和单变量选择的建立评估器
 combined_features = FeatureUnion([("pca", pca), ("univ_select", selection)])
 #使用组合特征来转换数据集
-X_features = combined_features.fit(X, y).transform(X)
+#X_features = combined_features.fit(X, y).transform(X)
+
 
 svm = SVC(kernel="linear")
 
@@ -43,4 +44,9 @@ grid_search = GridSearchCV(pipeline, param_grid=param_grid, verbose=10)
 grid_search.fit(X, y)
 print(grid_search.best_estimator_)
 
+from sklearn.externals import joblib
+joblib.dump(grid_search, 'filename.pkl') 
+grid_search1 = joblib.load('filename.pkl') 
+y_predict = grid_search1.predict(X)
+print ('predict:  ', y_predict)
 
