@@ -52,7 +52,6 @@ from scipy import interp
 iris = datasets.load_iris()
 X = iris.data
 y = iris.target
-XX = X
 # Binarize the output
 y = label_binarize(y, classes=[0, 1, 2])
 n_classes = y.shape[1]
