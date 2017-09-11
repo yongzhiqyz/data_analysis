@@ -2,3 +2,7 @@
 *.npy
 .DS_Store
 *.db
+*.~gm
+*.log
+*.lst
+*.lxi
