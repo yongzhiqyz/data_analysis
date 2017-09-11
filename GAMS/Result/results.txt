@@ -1,0 +1,10 @@
+Model status        4.00
+Solver status        1.00
+Objective       52.10
+Shipments
+seattle     new-york            0.00
+seattle     chicago            10.00
+seattle     topeka              0.00
+san-diego   new-york          325.00
+san-diego   chicago           290.00
+san-diego   topeka            275.00
